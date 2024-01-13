@@ -1,5 +1,8 @@
 pipeline {
     agent any
+      options {
+        runWithSystemPermissions(true)
+    }
     stages {
         stage('checkout'){
             steps{
@@ -8,8 +11,7 @@ pipeline {
         }
         stage('Test'){
             steps{
-                // sh 'sudo apt update'
-                sh 'sudo apt install Node.js npm'
+                sh 'sudo apt install npm'
                 sh 'npm test'
             }
         }
