@@ -1,8 +1,5 @@
 pipeline {
     agent any
-      options {
-        runWithSystemPermissions(true)
-    }
     stages {
         stage('checkout'){
             steps{
